@@ -1,0 +1,2 @@
+motivasi saya mengikuti course ini karena saya ingin belajar laravel lebih dalam lagi,
+harapan saya setelah mengikuti course ini : bisa membuat project yang lebih complex dengan laravel

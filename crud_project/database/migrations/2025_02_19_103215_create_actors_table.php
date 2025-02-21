@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('actors', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('cast_id');
+            $table->id('cast_id');
             $table->foreign('cast_id')->references('id')->on('casts');
             $table->uuid('film_id');
             $table->foreign('film_id')->references('id')->on('films');

@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('casts', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name');
             $table->integer('age');
             $table->text('bio');
+            $table->timestamps();
         });
     }
 

@@ -12,10 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('actors', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->foreignId('cast_id')->references('id')->on('casts');
-            $table->uuid('film_id');
-            $table->foreign('film_id')->references('id')->on('films');
+            $table->foreignId('film_id')->references('id')->on('films');
             $table->string('name');
         });
     }

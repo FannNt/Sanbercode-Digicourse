@@ -12,11 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->uuid('film_id');
-            $table->foreign('film_id')->references('id')->on('films');
+            $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('film_id')->references('id')->on('films');
             $table->text('content');
             $table->integer('point');
         });

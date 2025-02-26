@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('films', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('title');
             $table->text('summary');
             $table->string('release_year');
             $table->string('poster');
-            $table->uuid('genre_id');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreignId('genre_id')->references('id')->on('genres');
         });
     }
 

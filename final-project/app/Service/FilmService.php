@@ -2,35 +2,36 @@
 
 namespace App\Service;
 
+use App\Interface\FilmRepositoryInterface;
 use App\Models\Film;
 use App\Models\User;
 
 class FilmService implements ServiceInterface
 {
-    protected $filmService;
-    public function __construct(FilmService $filmService)
+    protected $filmRepository;
+    public function __construct(FilmRepositoryInterface $filmRepository)
     {
-        $this->filmService = $filmService;
+        $this->filmRepository = $filmRepository;
     }
 
     public function index()
     {
-        return $this->filmService->index();
+        return $this->filmRepository->all();
     }
 
     public function create(array $data)
     {
-        return $this->filmService->create($data);
+        return $this->filmRepository->create($data);
     }
 
     public function delete($id)
     {
-        return $this->filmService->delete($id);
+        return $this->filmRepository->delete($id);
     }
 
     public function findById($id)
     {
-        return $this->filmService->findById($id);
+        return $this->filmRepository->findById($id);
     }
 
     public function update($id, array $data)

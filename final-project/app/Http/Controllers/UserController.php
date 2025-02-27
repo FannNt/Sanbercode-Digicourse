@@ -18,7 +18,8 @@ class UserController extends Controller
     }
     public function index()
     {
-        $this->userService->index();
+        $users = $this->userService->index();
+        return view('Film.index', compact('users'));
     }
 
     public function create(CreateRequest $request)

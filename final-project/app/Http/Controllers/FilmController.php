@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Film\CreateRequest;
 use App\Http\Requests\Film\UpdateRequest;
 use App\Service\FilmService;
-use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
@@ -17,7 +16,8 @@ class FilmController extends Controller
 
     public function index()
     {
-        return $this->filmService->index();
+        $films = $this->filmService->index();
+        return view('Film.index', compact('films'));
     }
 
     public function create(CreateRequest $request)

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Class\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Class\UserService;
+use App\Service\UserService;
 use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\UpdateRequest;
 use Illuminate\Http\Request;

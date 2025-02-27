@@ -8,7 +8,7 @@ interface UserRepositoryInterface
 {
     public function all();
 
-    public function create($data);
+    public function create(array $data);
 
     public function update(User $user,array $data);
 

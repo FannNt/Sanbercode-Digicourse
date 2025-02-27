@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Class;
+namespace App\Service;
 
 use App\Models\User;
 use App\Interface\UserRepositoryInterface;
 use Illuminate\Http\Client\HttpClientException;
 use Illuminate\Support\Facades\Hash;
 
-class UserService implements ServiceInterface
+class UserService
 {
     protected $userRepository;
 

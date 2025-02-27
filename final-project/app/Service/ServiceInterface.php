@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Class;
+namespace App\Service;
 
 use App\Models\User;
 
@@ -10,9 +10,9 @@ interface ServiceInterface
 
     public function create(array $data);
 
-    public function delete(User $user);
+    public function delete($id);
 
     public function findById($id);
 
-    public function update(User $user,array $data);
+    public function update($id,array $data);
 }

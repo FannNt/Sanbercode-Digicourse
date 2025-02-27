@@ -10,11 +10,11 @@ class Review extends Model
 
     public function user()
     {
-        $this->hasOne(User::class);
+        $this->belongsTo(User::class, 'user_id');
     }
 
     public function film()
     {
-        $this->hasOne(Film::class);
+        $this->belongsTo(Film::class, 'film_id');
     }
 }

@@ -10,6 +10,6 @@ class Cast extends Model
 
     public function actor()
     {
-        $this->belongsToMany(Actor::class);
+        $this->hasMany(Actor::class,'cast_id');
     }
 }

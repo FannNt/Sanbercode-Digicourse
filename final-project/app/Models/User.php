@@ -48,12 +48,12 @@ class User extends Authenticatable
 
     public function profile()
     {
-        $this->belongsTo(Profile::class);
+        $this->hasOne(Profile::class, 'user_id');
     }
 
     public function review()
     {
-        $this->belongsToMany(Review::class);
+        $this->hasOne(Review::class, 'user_id');
     }
 
 }

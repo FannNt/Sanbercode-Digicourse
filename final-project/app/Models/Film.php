@@ -13,16 +13,16 @@ class Film extends Model
 
     public function genre()
     {
-        $this->hasMany(Genre::class);
+        return $this->belongsTo(Genre::class, 'genre_id');
     }
 
     public function actor()
     {
-        $this->belongsToMany(Actor::class);
+        $this->hasMany(Actor::class,'cast_id');
     }
 
     public function review()
     {
-        $this->belongsToMany(Review::class);
+        $this->hasMany(Review::class, 'film_id');
     }
 }

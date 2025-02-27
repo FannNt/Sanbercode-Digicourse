@@ -10,6 +10,6 @@ class Profile extends Model
 
     public function user()
     {
-        $this->hasOne(User::class);
+        $this->belongsTo(User::class, 'user_id');
     }
 }

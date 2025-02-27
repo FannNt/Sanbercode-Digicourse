@@ -10,6 +10,6 @@ class Actor extends Model
 
     public function film()
     {
-        $this->hasOne(Film::class);
+        $this->belongsTo(Film::class, 'film_id');
     }
 }

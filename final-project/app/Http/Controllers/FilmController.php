@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Film\CreateRequest;
 use App\Http\Requests\Film\UpdateRequest;
+use App\Models\Genre;
 use App\Service\FilmService;
 
 class FilmController extends Controller
@@ -17,12 +18,15 @@ class FilmController extends Controller
     public function index()
     {
         $films = $this->filmService->index();
-        return view('Film.index', compact('films'));
+        $genres = Genre::all();
+        return view('Film.index', compact('films','genres'));
     }
+
 
     public function create(CreateRequest $request)
     {
-        return $this->filmService->create($request->validated());
+        $this->filmService->create($request->validated());
+        return redirect(route('film'));
     }
 
     public function update($id, UpdateRequest $request)
@@ -32,6 +36,13 @@ class FilmController extends Controller
 
     public function delete($id)
     {
-        return $this->filmService->delete($id);
+        $this->filmService->delete($id);
+        return redirect(route('film'));
+    }
+
+    public function findById($id)
+    {
+        $film = $this->filmService->findById($id);
+        return view('Film.detail', compact('film'));
     }
 }

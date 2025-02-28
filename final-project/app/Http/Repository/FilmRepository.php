@@ -26,11 +26,12 @@ class FilmRepository implements FilmRepositoryInterface
 
     public function delete($id)
     {
-        return Film::delete($id);
+        $film = Film::findOrFail($id);
+        return $film->delete($id);
     }
 
     public function findById($id)
     {
-        return Film::findOrFail($id);
+        return Film::with('review')->findOrFail($id);
     }
 }

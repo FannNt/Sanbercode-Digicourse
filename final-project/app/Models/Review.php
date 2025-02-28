@@ -2,19 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    use HasFactory;
+    public $timestamps = false;
     protected $guarded = [];
 
     public function user()
     {
-        $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function film()
     {
-        $this->belongsTo(Film::class, 'film_id');
+        return $this->belongsTo(Film::class, 'film_id');
     }
 }

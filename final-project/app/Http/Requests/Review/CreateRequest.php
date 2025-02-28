@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Film;
+namespace App\Http\Requests\Review;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,11 +22,8 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|min:3',
-            'summary' => 'required|string|min:3',
-            'release_year' => 'required|date',
-            'poster' => 'required|string',
-            'genre_id' => 'required|exists:genres,id'
+            'content' => 'required|string|max:150',
+            'point' => 'required|integer|max:5'
         ];
     }
 }

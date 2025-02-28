@@ -18,11 +18,11 @@ class Film extends Model
 
     public function actor()
     {
-        $this->hasMany(Actor::class,'cast_id');
+        return $this->hasMany(Actor::class,'cast_id');
     }
 
     public function review()
     {
-        $this->hasMany(Review::class, 'film_id');
+        return $this->hasMany(Review::class, 'film_id');
     }
 }

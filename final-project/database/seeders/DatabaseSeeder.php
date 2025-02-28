@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Film;
 use App\Models\Genre;
+use App\Models\Review;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,10 +24,10 @@ class DatabaseSeeder extends Seeder
 
          Film::factory(10)->create();
 
-
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
-//        ]);
+            Review::factory(3)->create();
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }

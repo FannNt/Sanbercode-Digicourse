@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Film;
+namespace App\Http\Requests\Genre;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,9 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'sometimes|string|min:3',
-            'summary' => 'sometimes|string|min:3',
-            'genre_id' => 'sometimes|exists:genres,id'
+            'name' => 'required|min:3'
         ];
     }
 }

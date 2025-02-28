@@ -15,6 +15,13 @@ class FilmController extends Controller
         $this->filmService = $filmService;
     }
 
+    public function editForm($id)
+    {
+        $film = $this->filmService->findById($id);
+        $genres = Genre::all();
+
+        return view('Film.edit', compact('film','genres'));
+    }
     public function index()
     {
         $films = $this->filmService->index();
@@ -31,7 +38,8 @@ class FilmController extends Controller
 
     public function update($id, UpdateRequest $request)
     {
-        return $this->filmService->update($id, $request->validated());
+         $this->filmService->update($id, $request->validated());
+         return redirect(route('film'));
     }
 
     public function delete($id)

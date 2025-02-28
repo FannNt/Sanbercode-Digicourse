@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
          User::factory(10)->create();
          Genre::factory(2)->create();
          Genre::factory()->create([
-             'name' => 'action'
+             'name' => 'Action'
          ]);
 
          Film::factory(10)->create();

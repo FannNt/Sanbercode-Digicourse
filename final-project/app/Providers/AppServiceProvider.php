@@ -3,8 +3,11 @@
 namespace App\Providers;
 
 use App\Http\Repository\FilmRepository;
+use App\Http\Repository\GenreRepository;
 use App\Interface\FilmRepositoryInterface;
+use App\Interface\GenreRepositoryInterface;
 use App\Service\FilmService;
+use App\Service\GenreService;
 use App\Service\UserService;
 use App\Http\Repository\UserRepository;
 use App\Interface\UserRepositoryInterface;
@@ -22,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(FilmRepositoryInterface::class, FilmRepository::class);
         $this->app->bind(FilmService::class,FilmService::class);
+
+        $this->app->bind(GenreRepositoryInterface::class, GenreRepository::class);
+        $this->app->bind(GenreService::class,GenreService::class);
+
     }
 
     /**

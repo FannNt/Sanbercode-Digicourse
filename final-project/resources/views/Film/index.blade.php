@@ -31,7 +31,7 @@
                             <p class="text-gray-600 mt-2">Film Summary: {{ $film->summary }}</p>
                             <p class="text-gray-600 mt-2">Release on: {{ $film->release_year }}</p>
                             <div class="mt-4">
-                                <a href="{{ route('detail', $film->id) }}" class="text-blue-500 hover:underline font-medium">Detail</a>
+                                <a href="{{ route('film-detail', $film->id) }}" class="text-blue-500 hover:underline font-medium">Detail</a>
                             </div>
                         </div>
                     </div>

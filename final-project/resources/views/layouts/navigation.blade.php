@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('film')" :active="request()->routeIs('film')">
                         {{ __('Film') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('genre')" :active="request()->routeIs('genre')">
+                        {{ __('Genre') }}
+                    </x-nav-link>
                 </div>
             </div>
             @guest()
@@ -77,6 +80,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('film')" :active="request()->routeIs('film')">
                 {{ __('Film') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('genre')" :active="request()->routeIs('genre')">
+                {{ __('Genre') }}
             </x-responsive-nav-link>
         </div>
         @guest()

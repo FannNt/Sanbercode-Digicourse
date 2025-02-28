@@ -22,6 +22,7 @@
                         <form action="{{ route('film-delete',$film->id) }}" method="post">
                             @csrf
                             @method('delete')
+                            <a href="{{route('film-edit-form',$film->id)}}" class="m-2 bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition">Edit</a>
                             <button type="submit" class="m-2 bg-red-600 text-white px-5 py-2 rounded-lg shadow hover:bg-red-700 transition">
                                 Delete
                             </button>

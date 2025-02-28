@@ -86,6 +86,7 @@
                         <div>Login</div>
                     </a>
                 </div>
+            </div>
                 @endguest
         @auth()
         <!-- Responsive Settings Options -->
@@ -114,4 +115,5 @@
         </div>
         @endauth
     </div>
+
 </nav>

@@ -23,7 +23,7 @@
                     @endforeach
                 </div>
 
-                @auth
+                @if(admin())
                     <div class="mt-10 flex justify-between">
                         <a href="{{ route('genre-edit-form', $genre->id) }}" class="bg-yellow-500 px-5 py-2 text-white rounded-lg shadow hover:bg-yellow-600 transition">
                             Edit Genre
@@ -37,7 +37,7 @@
                             </button>
                         </form>
                     </div>
-                @endauth
+                @endif
 
             </div>
         </div>

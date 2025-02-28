@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-gray-800">Film</h1>
-            @auth()
+            @if(admin())
             <button id="openModal" class="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600">
                 Add Film
             </button>
-            @endauth
+            @endif
         </div>
     </x-slot>
 

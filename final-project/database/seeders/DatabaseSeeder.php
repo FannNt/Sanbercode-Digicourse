@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Actor;
+use App\Models\Cast;
 use App\Models\Film;
 use App\Models\Genre;
 use App\Models\Review;
@@ -16,18 +18,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory(10)->create();
-         Genre::factory(2)->create();
-         Genre::factory()->create([
-             'name' => 'Action'
-         ]);
+//         User::factory(10)->create();
+//         Genre::factory(2)->create();
+//         Genre::factory()->create([
+//             'name' => 'Action'
+//         ]);
+//
+//         Film::factory(10)->create();
+//
+//            Review::factory(3)->create();
+//        User::factory()->create([
+//            'name' => 'Test User',
+//            'email' => 'test@example.com',
+//        ]);
+        Cast::factory(5)->create();
 
-         Film::factory(10)->create();
-
-            Review::factory(3)->create();
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Actor::factory(20)->create();
     }
 }

@@ -9,7 +9,7 @@
         <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="md:flex">
                 <div class="md:w-1/3">
-{{--                    <img class="w-full h-full object-cover" src="{{ $film->poster }}" alt="{{ $film->title }}">--}}
+                    <img class="w-full h-full object-cover" src="{{ $film->poster }}" alt="{{ $film->title }}">
                 </div>
                 <div class="p-6 md:w-2/3">
                     <h1 class="text-3xl font-bold text-gray-800">{{ $film->title }}</h1>
@@ -41,12 +41,10 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($film->actor as $actor)
                     <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
-                        <h2 class="text-xl font-semibold text-gray-800">{{ $actor->cast->name }}</h2>
-                        <p class="text-gray-600 text-sm mt-1">Release Year: <span class="font-semibold">{{ $actor->name }}</span></p>
+                        <h2 class="text-xl font-semibold text-gray-800"></h2>
+                        <p class="text-gray-600 text-sm mt-1">Actor: <span class="font-semibold">{{ $actor->name }}</span></p>
+                        <p class="text-gray-600 text-sm mt-1">Cast: <span class="font-semibold">{{ $actor->cast->name }}</span></p>
 
-                        <a href="{{ route('film-detail', $film->id) }}" class="text-blue-600 hover:underline mt-2 inline-block">
-                            View Details
-                        </a>
                     </div>
                 @endforeach
             </div>

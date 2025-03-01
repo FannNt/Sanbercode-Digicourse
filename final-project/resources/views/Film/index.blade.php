@@ -28,7 +28,7 @@
                     <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
                         <div class="p-4">
                             <h2 class="text-xl font-semibold text-gray-800">{{ $film->title }}</h2>
-                            <p class="text-gray-600 mt-2">Film Summary: {{ $film->summary }}</p>
+                            <p class="text-gray-600 mt-2">Film Summary: {{ Str::limit($film->summary,50,'...') }}</p>
                             <p class="text-gray-600 mt-2">Release on: {{ $film->release_year }}</p>
                             <div class="mt-4">
                                 <a href="{{ route('film-detail', $film->id) }}" class="text-blue-500 hover:underline font-medium">Detail</a>

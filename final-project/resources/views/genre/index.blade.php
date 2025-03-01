@@ -12,7 +12,7 @@
 
     @if ($errors->any())
         <div class="max-w-2xl mx-auto my-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
-            <p class="font-semibold">There were some errors when create films:</p>
+            <p class="font-semibold">There were some errors when create Genre:</p>
             <ul class="list-disc pl-5">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -29,7 +29,7 @@
                         <div class="p-4">
                             <h2 class="text-xl font-semibold text-gray-800">{{ $genre->name }}</h2>
                             <div class="mt-4">
-                                <a href="{{ route('genre-detail', $genre->id) }}" class="text-blue-500 hover:underline font-medium">Detail</a>
+                                <a href="{{ route('genre-detail', $genre->id) }}" class="text-blue-500 hover:underline font-medium">Show movie with this genre</a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
 
     <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden"><div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
             <div class="bg-white p-6 rounded-lg shadow-xl w-96">
-                <h2 class="text-xl font-bold text-gray-800 mb-4">Add Film</h2>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Add Genre</h2>
 
                 <form action="{{ route('genre-create') }}" method="POST">
                     @csrf
@@ -48,7 +48,7 @@
                         <label class="block text-gray-700">Title</label>
                         <input type="text" name="name" value="{{ old('name') }}"
                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 @error('name') border-red-500 @enderror"
-                               placeholder="Enter film name">
+                               placeholder="Enter Genre name">
                     </div>
 
                     <div class="flex justify-end space-x-2 mt-4">

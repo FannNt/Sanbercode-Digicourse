@@ -39,6 +39,11 @@
             <h1 class="text-2xl font-bold text-gray-800 mb-6">Actor From {{ $film->title }}</h1>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @if($film->actor->isEmpty())
+                    <div class="border-b pb-4 mb-4 ">
+                        Actor not detected for this movie
+                    </div>
+                @endif
                 @foreach($film->actor as $actor)
                     <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
                         <h2 class="text-xl font-semibold text-gray-800"></h2>
@@ -48,23 +53,6 @@
                     </div>
                 @endforeach
             </div>
-
-{{--            @auth--}}
-{{--                <div class="mt-10 flex justify-between">--}}
-{{--                    <a href="{{ route('genre-edit-form', $genre->id) }}" class="bg-yellow-500 px-5 py-2 text-white rounded-lg shadow hover:bg-yellow-600 transition">--}}
-{{--                        Edit Genre--}}
-{{--                    </a>--}}
-{{--                    <form id="delete-form" action="{{ route('genre-delete', $genre->id) }}" method="POST">--}}
-{{--                        @csrf--}}
-{{--                        @method('DELETE')--}}
-{{--                        <button type="submit" onclick="return confirm('Are you sure you want to delete this genre? (that will delete all films with this genre)')"--}}
-{{--                                class="bg-red-600 text-white px-5 py-2 rounded-lg shadow hover:bg-red-700 transition">--}}
-{{--                            Delete--}}
-{{--                        </button>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            @endauth--}}
-
         </div>
     </div>
     <div id="review" class="max-w-6xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6">

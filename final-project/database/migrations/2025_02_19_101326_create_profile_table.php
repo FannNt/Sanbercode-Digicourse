@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('age');
             $table->text('bio');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

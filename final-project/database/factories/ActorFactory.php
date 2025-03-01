@@ -19,7 +19,7 @@ class ActorFactory extends Factory
         return [
             'name' => fake()->name(),
             'film_id' => rand(1,10),
-            'cast_id' => rand(1,3)x
+            'cast_id' => rand(1,3)
         ];
     }
 }
